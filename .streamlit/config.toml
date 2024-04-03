@@ -1,2 +1,2 @@
-[browser]
-showMainMenu = false
+[client]
+showSidebarNavigation = false
