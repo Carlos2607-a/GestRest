@@ -27,7 +27,9 @@ subcategorias = ['Productos Cocina', 'Productos Barra', 'Productos Limpieza']
 subcategoria_seleccionada = st.sidebar.selectbox('Selecciona una subcategoría', subcategorias)
 # Muestra el contenido correspondiente a la subcategoría seleccionada
 if subcategoria_seleccionada == 'Productos Cocina':
+
     st.write('Productos Cocina')
+    
     if 'pedidos' not in st.session_state:
         st.session_state['pedidos'] = pd.DataFrame(columns=['Producto'])
 
@@ -54,8 +56,9 @@ if subcategoria_seleccionada == 'Productos Cocina':
 
 
 elif subcategoria_seleccionada == 'Productos Barra':
-    # Inicializa st.session_state['pedidos'] si no existe
+   
     st.write('Productos de Barra')
+
     if 'pedidos' not in st.session_state:
         st.session_state['pedidos'] = pd.DataFrame(columns=['Producto'])
 
@@ -82,6 +85,7 @@ elif subcategoria_seleccionada == 'Productos Barra':
 
 elif subcategoria_seleccionada == 'Productos Limpieza':
     st.write('Productos Limpieza')
+
     if 'pedidos' not in st.session_state:
         st.session_state['pedidos'] = pd.DataFrame(columns=['Producto'])
 
