@@ -112,8 +112,8 @@ def to_excel(df):
 
         # Agrega la fecha actual a una celda
         fecha_actual = datetime.now().strftime("%d/%m/%Y")
-        worksheet.write('A2', 'Fecha:', bordered_format)
-        worksheet.write('B2', fecha_actual, bordered_format)
+        worksheet.write('D1', 'Fecha:', bordered_format)
+        worksheet.write('D2', fecha_actual, bordered_format)
 
     processed_data = output.getvalue()
     return processed_data
