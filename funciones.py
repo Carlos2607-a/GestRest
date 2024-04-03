@@ -104,18 +104,18 @@ def to_excel(df, template_path, output_path, nombre_del_restaurante):
         fecha_actual = datetime.now().strftime("%d/%m/%Y")
         worksheet.write('D3', fecha_actual, bordered_format)
 
-    # Devuelve los datos del archivo de Excel
-    return pd.read_excel(output_path).to_csv(index=False)
-
-
+    # Devuelve los datos del archivo de Excel como bytes
+    with open(output_path, 'rb') as f:
+        return f.read()
 
 def descargar_excel(df, nombre_archivo, nombre_del_restaurante):
     st.download_button(
         label="Descargar Excel",
         data=to_excel(df, "plantilla/plantilla.xlsx", nombre_archivo, nombre_del_restaurante),
         file_name=nombre_archivo,
-        mime="application/vnd.ms-excel"
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )
+
 
 def vista_previa(df):
     if st.button('Vista Previa'):
