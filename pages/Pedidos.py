@@ -46,12 +46,17 @@ elif subcategoria_seleccionada == 'Productos Barra':
         # Selección de productos
         seleccionar_productos(categoria, productos)
 
+    # Añade una entrada de texto para que el cliente pueda añadir comentarios
+    comentario = st.text_input('Agrega tus comentarios aquí')
+
+    # Añade el comentario al DataFrame 'pedidos'
+    if 'pedidos' in st.session_state:
+        st.session_state['pedidos']['Comentarios'] = comentario
+
     # Vista previa del DataFrame
     vista_previa(st.session_state['pedidos'])
 
-    if 'pedidos' in st.session_state:
-        mostrar_carrito(st.session_state['pedidos'])
-
+    # Guarda el DataFrame en un archivo de Excel
     nombre_archivo = f"Pedido_{restaurante_seleccionado}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
     descargar_excel(st.session_state['pedidos'], nombre_archivo)
 
