@@ -8,6 +8,7 @@ from email.mime.base import MIMEBase
 from email import encoders
 import os
 
+
 def añadir_producto(producto, cantidad, tipo, unidad):
     # Comprueba si 'pedidos' existe en st.session_state y si no, lo inicializa con un DataFrame vacío
     if 'pedidos' not in st.session_state:
@@ -79,42 +80,35 @@ def seleccionar_productos(categoria, productos):
 
 
 
-def to_excel(df):
-    output = BytesIO()
-    with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
-        df.to_excel(writer, index=False, startrow=1)  # Deja una fila en blanco en la parte superior para la fecha
-        
+def to_excel(df, template_path, output_path, nombre_del_restaurante):
+    # Lee la plantilla en blanco
+    template_df = pd.read_excel("plantilla/plantilla.xlsx")
+
+    # Rellena el DataFrame de la plantilla con tus datos
+    for col in df.columns:
+        if col in template_df.columns:
+            template_df[col] = df[col]
+
+    # Escribe el DataFrame en un nuevo archivo de Excel
+    with pd.ExcelWriter(output_path, engine='xlsxwriter') as writer:
+        template_df.to_excel(writer, index=False)  # Deja una fila en blanco en la parte superior para la fecha y el nombre del restaurante
+
         # Obtén la hoja de trabajo de xlsxwriter
         workbook  = writer.book
         worksheet = writer.sheets['Sheet1']
-        
+
         # Crea un formato con bordes y texto centrado
         bordered_format = workbook.add_format({'border':1, 'align':'center'})
-        
-        # Aplica el formato a las celdas con información
-        for row_num, row_data in enumerate(df.values):
-            for col_num, cell_data in enumerate(row_data):
-                # Solo aplicamos el formato si la celda contiene datos
-                if cell_data:
-                    worksheet.write(row_num+2, col_num, cell_data, bordered_format)
-        
-        # Establece el ancho de las columnas
-        worksheet.set_column('A:A', 40) 
-        worksheet.set_column('B:B', 20)  #
-        worksheet.set_column('C:C', 40)  
 
-        # Agrega la fecha actual a una celda
+        # Agrega la fecha actual y el nombre del restaurante a las celdas
         fecha_actual = datetime.now().strftime("%d/%m/%Y")
-        worksheet.write('A1', 'Fecha:', bordered_format)
-        worksheet.write('B1', fecha_actual, bordered_format)
+        worksheet.write('D3', fecha_actual, bordered_format)
 
-    processed_data = output.getvalue()
-    return processed_data
 
-def descargar_excel(df, nombre_archivo):
+def descargar_excel(df, nombre_archivo, nombre_del_restaurante):
     st.download_button(
-        label="Enviar Pedido",
-        data=to_excel(df),
+        label="Descargar Excel",
+        data=to_excel(df, "plantilla/plantilla.xlsx", nombre_archivo, nombre_del_restaurante),
         file_name=nombre_archivo,
         mime="application/vnd.ms-excel"
     )
