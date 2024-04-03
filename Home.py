@@ -55,7 +55,7 @@ if st.session_state["authentication_status"]:
 
 # Agregar un botón para volver al menú principal
 if st.button("Volver al Menú Principal"):
-    st.page_link("Home.py", disabled=False)
+    st.experimental_rerun()
     
 
 elif st.session_state["authentication_status"] is False:
