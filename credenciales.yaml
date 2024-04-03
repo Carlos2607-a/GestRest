@@ -1,0 +1,28 @@
+credentials:
+  usernames:
+    gaellev:
+      email: symbad@gmail.com
+      failed_login_attempts: 0 # Will be managed automatically
+      logged_in: False # Will be managed automatically
+      name: Gaelle Vervaeke
+      password: Symbad321. # Will be hashed automatically
+    javierl:
+      email: luna@gmail.com
+      failed_login_attempts: 0 # Will be managed automatically
+      logged_in: False # Will be managed automatically
+      name: Javier Luna
+      password: Luna654. # Will be hashed automatically
+    monse:
+      email: andys@gmail.com
+      failed_login_attempts: 0 # Will be managed automatically
+      logged_in: False # Will be managed automatically
+      name: Monse Andys
+      password: Andys987 # Will be hashed automatically
+cookie:
+  expiry_days: 1
+  key: 7221f073e5bacda5922e0b123cf6dfcb0f96fcce32b7f67435f8abd85de18c2e # Must be string
+  name: GestRest
+pre-authorized:
+  emails:
+  - pedidosandys0000@gmail.com
+  - carlos.mijares0993@gmail.com
