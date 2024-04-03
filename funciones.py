@@ -82,7 +82,7 @@ def seleccionar_productos(categoria, productos):
 
 def to_excel(df, template_path, output_path, nombre_del_restaurante):
     # Lee la plantilla en blanco
-    template_df = pd.read_excel("plantilla/plantilla.xlsx")
+    template_df = pd.read_excel(template_path)
 
     # Rellena el DataFrame de la plantilla con tus datos
     for col in df.columns:
@@ -103,6 +103,10 @@ def to_excel(df, template_path, output_path, nombre_del_restaurante):
         # Agrega la fecha actual y el nombre del restaurante a las celdas
         fecha_actual = datetime.now().strftime("%d/%m/%Y")
         worksheet.write('D3', fecha_actual, bordered_format)
+
+    # Devuelve los datos del archivo de Excel
+    return pd.read_excel(output_path).to_csv(index=False)
+
 
 
 def descargar_excel(df, nombre_archivo, nombre_del_restaurante):
