@@ -93,7 +93,7 @@ def to_excel(df):
         title_format = workbook.add_format({'font_size': 26, 'bg_color': 'black', 'font_color': 'white'})
 
         # Escribe el título
-        worksheet.write('A1', 'Mi Título', title_format)
+        worksheet.write('A1', 'Solicitud de Productos', title_format)
 
         # Crea un formato con bordes y texto centrado
         bordered_format = workbook.add_format({'border':1, 'align':'center'})
