@@ -58,4 +58,4 @@ elif subcategoria_seleccionada == 'Productos Limpieza':
     st.write('Productos Limpieza')
 
 if st.button("Volver al Menú Principal"):
-    st.page_link("Home.py")
+    st.page_link("Home.py", disabled=False)
