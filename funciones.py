@@ -87,6 +87,7 @@ def to_excel(df, comentario):
 
         # Obtén la hoja de trabajo de xlsxwriter
         workbook  = writer.book
+        workbook.nan_inf_to_errors = True  # Añade esta línea
         worksheet = writer.sheets['Sheet1']
 
         # Crea un formato para el título
