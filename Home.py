@@ -51,12 +51,7 @@ if st.session_state["authentication_status"]:
     with st.expander("Contenido Permitido", expanded=True):
         st.page_link("pages/Pedidos.py", disabled=False)
         st.page_link("pages/Soporte Tecnico.py", disabled=False)
-        st.page_link("pages/Administración.py", disabled=True)
-
-# Agregar un botón para volver al menú principal
-if st.button("Volver al Menú Principal"):
-    st.experimental_rerun()
-    
+        st.page_link("pages/Administración.py", disabled=True) 
 
 elif st.session_state["authentication_status"] is False:
     st.error('Usuario/contraseña incorrectos')
