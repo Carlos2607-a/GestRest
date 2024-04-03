@@ -58,6 +58,15 @@ elif subcategoria_seleccionada == 'Productos Barra':
 elif subcategoria_seleccionada == 'Productos Limpieza':
     st.write('Productos Limpieza')
 
+# Añade una entrada de texto para que el cliente pueda añadir comentarios
+comentario = st.text_area('Agrega tus comentarios aquí', height=200)
+
+# Añade el comentario al DataFrame 'pedidos'
+if 'pedidos' in st.session_state:
+    if len(st.session_state['pedidos']) == 0:
+        st.session_state['pedidos'] = st.session_state['pedidos'].append({'Producto': '', 'Comentarios': str(comentario)}, ignore_index=True)
+    else:
+        st.session_state['pedidos']['Comentarios'] = str(comentario)
 
 if st.button("Volver al Menú Principal"):
     st.page_link("Home.py", disabled=False)
