@@ -50,12 +50,12 @@ if st.session_state["authentication_status"]:
     st.title('Contenido')
     with st.expander("Contenido Permitido", expanded=True):
         st.page_link("pages/Pedidos.py", disabled=False)
-        if st.button("Volver al Menu Principal"):
-            st.page_link("Home.py", disabled=False)
         st.page_link("pages/Soporte Tecnico.py", disabled=False)
-        if st.button("Volver al Menu Principal"):
-            st.page_link("Home.py", disabled=False)
         st.page_link("pages/Administración.py", disabled=True)
+
+# Agregar un botón para volver al menú principal
+if st.button("Volver al Menú Principal"):
+    st.page_link("Home.py", disabled=False)
     
 
 elif st.session_state["authentication_status"] is False:
