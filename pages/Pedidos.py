@@ -59,8 +59,6 @@ elif subcategoria_seleccionada == 'Productos Barra':
 elif subcategoria_seleccionada == 'Productos Limpieza':
     st.write('Productos Limpieza')
 
-
-
 # Añade el comentario al DataFrame 'pedidos'
 if 'pedidos' in st.session_state:
     if len(st.session_state['pedidos']) == 0:
