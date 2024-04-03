@@ -48,6 +48,13 @@ if st.session_state["authentication_status"]:
         st.page_link(
             "pages/Pedidos.py"
         )
+        st.page_link(
+            "pages/Soporte Tecnico.py"
+        )
+        st.page_link(
+            "pages/Administración.py"
+            disabled=True
+        )
 
 elif st.session_state["authentication_status"] is False:
     st.error('Username/password is incorrect')
