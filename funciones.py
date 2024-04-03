@@ -80,7 +80,7 @@ def seleccionar_productos(categoria, productos):
 
 
 
-def to_excel(df):
+def to_excel(df, comentario):
     output = BytesIO()
     with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
         df.to_excel(writer, index=False, startrow=2)  # Deja dos filas en blanco en la parte superior para el título y la fecha
@@ -125,9 +125,12 @@ def to_excel(df):
         fecha_actual = datetime.now().strftime("%d/%m/%Y")
         worksheet.write('D2', fecha_actual, date_format)
 
+        # Escribe el comentario en la celda A5
+        worksheet.write('A5', 'Comentarios:', title_format)
+        worksheet.write('A6', comentario)
+
     processed_data = output.getvalue()
     return processed_data
-
 
 def descargar_excel(df, nombre_archivo):
     st.download_button(
