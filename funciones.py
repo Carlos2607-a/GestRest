@@ -116,7 +116,7 @@ def to_excel(df):
         worksheet.set_column('D:D', 40)
 
         # Define un formato para la fecha con fondo blanco y texto negro
-        date_format = workbook.add_format({'font_size': 14, 'bg_color': 'white', 'font_color': 'black'})
+        date_format = workbook.add_format({'font_size': 14, 'bg_color': 'white', 'font_color': 'black', 'align': 'center'})
 
         # Escribe el enunciado 'Fecha:' con el formato de título
         worksheet.write('D1', 'Fecha:', title_format)
