@@ -20,11 +20,11 @@ st.set_page_config(
 
 st.title('Solicitud de Productos')
 
+
 # Crea una lista de subcategorías para 'Pedidos'
 subcategorias = ['Productos Cocina', 'Productos Barra', 'Productos Limpieza']
 # Crea un widget selectbox en la barra lateral para seleccionar la subcategoría
 subcategoria_seleccionada = st.sidebar.selectbox('Selecciona una subcategoría', subcategorias)
-
 # Muestra el contenido correspondiente a la subcategoría seleccionada
 if subcategoria_seleccionada == 'Productos Cocina':
     st.write('Productos Cocina')
@@ -49,7 +49,9 @@ elif subcategoria_seleccionada == 'Productos Barra':
     # Vista previa del DataFrame
     vista_previa(st.session_state['pedidos'])
 
-    # Guarda el DataFrame en un archivo de Excel
+    if 'pedidos' in st.session_state:
+        mostrar_carrito(st.session_state['pedidos'])
+
     nombre_archivo = f"Pedido_{restaurante_seleccionado}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
     descargar_excel(st.session_state['pedidos'], nombre_archivo)
 
