@@ -52,8 +52,8 @@ if st.session_state["authentication_status"]:
         st.page_link("pages/Pedidos.py", disabled=False)
         st.page_link("pages/Soporte Tecnico.py", disabled=False)
         st.page_link("pages/Administración.py", disabled=True)
-    if st.button("Volver al Menu Principal"):
-        st.page_link("Home.py", disabled=False)
+if st.button("Volver al Menu Principal"):
+    st.page_link("Home.py", disabled=False)
 
 elif st.session_state["authentication_status"] is False:
     st.error('Usuario/contraseña incorrectos')
