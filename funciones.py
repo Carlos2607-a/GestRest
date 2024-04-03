@@ -82,7 +82,7 @@ def seleccionar_productos(categoria, productos):
 
 def to_excel(df, template_path, output_path, nombre_del_restaurante):
     # Lee la plantilla en blanco
-    template_df = pd.read_excel("plantilla/plantilla.xlsx")
+    template_df = pd.read_excel(r"plantilla/plantilla.xlsx")
 
     # Rellena el DataFrame de la plantilla con tus datos
     for col in df.columns:
