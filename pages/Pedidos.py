@@ -58,8 +58,6 @@ elif subcategoria_seleccionada == 'Productos Barra':
 elif subcategoria_seleccionada == 'Productos Limpieza':
     st.write('Productos Limpieza')
 
-# Añade una entrada de texto para que el cliente pueda añadir comentarios
-comentario = st.text_area('Agrega tus comentarios aquí', height=200)
 
 if st.button("Volver al Menú Principal"):
     st.page_link("Home.py", disabled=False)
