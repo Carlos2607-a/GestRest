@@ -47,7 +47,7 @@ authenticator.login()
 if st.session_state["authentication_status"]:
     authenticator.logout()
     st.write(f'Bienvenido *{st.session_state["name"]}*')
-    st.title('Contenido')
+    st.title('Funciones')
     with st.expander("Contenido Permitido", expanded=True):
         st.page_link("pages/Pedidos.py", disabled=False)
         st.page_link("pages/Soporte Tecnico.py", disabled=False)

@@ -81,14 +81,20 @@ def seleccionar_productos(categoria, productos):
 
 
 def to_excel(df, template_path, output_path, nombre_del_restaurante):
-    # Lee la plantilla en blanco
-    template_df = pd.read_excel(r"plantilla/plantilla.xlsx")
+    # Escribe el DataFrame a un archivo Excel temporal
+    df.to_excel('temp.xlsx', index=False)
 
-    # Rellena el DataFrame de la plantilla con tus datos
-    for col in df.columns:
+    # Lee la plantilla y el archivo Excel temporal
+    template_df = pd.read_excel(template_path)
+    temp_df = pd.read_excel('temp.xlsx')
+
+    # Rellena el DataFrame de la plantilla con los datos del archivo Excel temporal
+    for col in temp_df.columns:
         if col in template_df.columns:
-            template_df[col] = df[col]
+            template_df[col] = temp_df[col]
 
+    # Escribe el DataFrame de la plantilla a tu archivo de salida
+    template_df.to_excel(output_path, index=False)
     # Escribe el DataFrame en un nuevo archivo de Excel
     with pd.ExcelWriter(output_path, engine='xlsxwriter') as writer:
         template_df.to_excel(writer, index=False)  # Deja una fila en blanco en la parte superior para la fecha y el nombre del restaurante
