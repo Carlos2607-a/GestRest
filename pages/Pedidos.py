@@ -47,7 +47,7 @@ elif subcategoria_seleccionada == 'Productos Barra':
         seleccionar_productos(categoria, productos)
 
     # Añade una entrada de texto para que el cliente pueda añadir comentarios
-    comentario = st.text_input('Agrega tus comentarios aquí')
+    st.text_input('Agrega tus comentarios aquí')
 
     # Añade el comentario al DataFrame 'pedidos'
     if 'pedidos' in st.session_state:
