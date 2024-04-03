@@ -20,11 +20,11 @@ st.set_page_config(
 
 st.title('Solicitud de Productos')
 
-
 # Crea una lista de subcategorías para 'Pedidos'
 subcategorias = ['Productos Cocina', 'Productos Barra', 'Productos Limpieza']
 # Crea un widget selectbox en la barra lateral para seleccionar la subcategoría
 subcategoria_seleccionada = st.sidebar.selectbox('Selecciona una subcategoría', subcategorias)
+
 # Muestra el contenido correspondiente a la subcategoría seleccionada
 if subcategoria_seleccionada == 'Productos Cocina':
     st.write('Productos Cocina')
@@ -46,13 +46,6 @@ elif subcategoria_seleccionada == 'Productos Barra':
         # Selección de productos
         seleccionar_productos(categoria, productos)
 
-    # Añade una entrada de texto para que el cliente pueda añadir comentarios
-    comentario = st.text_input('Agrega tus comentarios aquí')
-
-    # Añade el comentario al DataFrame 'pedidos'
-    if 'pedidos' in st.session_state:
-        st.session_state['pedidos']['Comentarios'] = comentario
-
     # Vista previa del DataFrame
     vista_previa(st.session_state['pedidos'])
 
@@ -62,6 +55,9 @@ elif subcategoria_seleccionada == 'Productos Barra':
 
 elif subcategoria_seleccionada == 'Productos Limpieza':
     st.write('Productos Limpieza')
+
+# Añade una entrada de texto para que el cliente pueda añadir comentarios
+comentario = st.text_area('Agrega tus comentarios aquí', height=200)
 
 if st.button("Volver al Menú Principal"):
     st.page_link("Home.py", disabled=False)
