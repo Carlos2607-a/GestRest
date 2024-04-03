@@ -90,13 +90,10 @@ def to_excel(df):
         worksheet = writer.sheets['Sheet1']
 
         # Crea un formato para el título
-        title_format = workbook.add_format({'font_size': 26, 'bg_color': 'black', 'font_color': 'white'})
-
-        # Define un formato para el texto centrado
-        centered_format = workbook.add_format({'align': 'center'})
+        title_format = workbook.add_format({'font_size': 26, 'bg_color': 'black', 'font_color': 'white', 'align': 'center'})
 
         # Escribe el título
-        worksheet.merge_range('A1:C1', 'Solicitud Productos', centered_format)
+        worksheet.merge_range('A1:C1', 'Solicitud Productos', title_format)
 
         # Aplica el formato de título a las celdas B1 a D1
         for col in range(1, 4):  # Las columnas en xlsxwriter comienzan en 0, por lo que 1 es la columna B y 4 es la columna E
