@@ -17,18 +17,21 @@ import streamlit_authenticator as stauth
 import yaml
 from yaml.loader import SafeLoader
 
-
-
-
+# Configurar la página
 st.set_page_config(
     page_title='Gestión de Restaurantes',
     layout='wide',
-    page_icon= '📊')
-st.title('Bienvenido GestRest')
+    page_icon='📊'
+)
 
+# Título
+st.title('Bienvenido a GestRest')
+
+# Cargar las credenciales desde el archivo YAML
 with open('credenciales.yaml') as file:
     config = yaml.load(file, Loader=SafeLoader)
 
+# Inicializar el autenticador
 authenticator = stauth.Authenticate(
     config['credentials'],
     config['cookie']['name'],
@@ -37,33 +40,25 @@ authenticator = stauth.Authenticate(
     config['pre-authorized']
 )
 
+# Iniciar sesión
 authenticator.login()
 
-
+# Verificar el estado de autenticación
 if st.session_state["authentication_status"]:
     authenticator.logout()
-    st.write(f'Welcome *{st.session_state["name"]}*')
-    st.title('Some content')
+    st.write(f'Bienvenido *{st.session_state["name"]}*')
+    st.title('Contenido')
     with st.expander("Contenido Permitido", expanded=True):
-        st.page_link(
-            "pages/Pedidos.py"
-            disabled=False
-        )
-        st.page_link(
-            "pages/Soporte Tecnico.py"
-            disabled=False
-        )
-        st.page_link(
-            "pages/Administración.py"
-            disabled=True
-        )
+        st.page_link("pages/Pedidos.py", disabled=False)
+        st.page_link("pages/Soporte Tecnico.py", disabled=False)
+        st.page_link("pages/Administración.py", disabled=True)
 
 elif st.session_state["authentication_status"] is False:
-    st.error('Username/password is incorrect')
+    st.error('Usuario/contraseña incorrectos')
 elif st.session_state["authentication_status"] is None:
-    st.warning('Please enter your username and password')
+    st.warning('Por favor, ingresa tu usuario y contraseña')
 
-# Función para manejar el evento del botón de reinicio de contraseña
+# Función para manejar el evento del botón de restablecimiento de contraseña
 def handle_reset_password():
     try:
         if authenticator.reset_password(st.session_state["username"]):
@@ -71,10 +66,11 @@ def handle_reset_password():
     except Exception as e:
         st.error(e)
 
-# Crear un botón desplegable para reiniciar la contraseña
+# Crear un botón para restablecer la contraseña
 if st.button("Restablecer Contraseña"):
     handle_reset_password()
 
-
+# Guardar las credenciales actualizadas en el archivo YAML
 with open('credenciales.yaml', 'w') as file:
     yaml.dump(config, file, default_flow_style=False)
+
