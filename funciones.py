@@ -132,14 +132,13 @@ def to_excel(df, comentario):
     processed_data = output.getvalue()
     return processed_data
 
-def descargar_excel(df, nombre_archivo):
+def descargar_excel(df, nombre_archivo, comentario):
     st.download_button(
         label="Descargar Excel",
-        data=to_excel(df),
+        data=to_excel(df, comentario),  # Pasa el comentario a la función to_excel()
         file_name=nombre_archivo,
         mime="application/vnd.ms-excel"
     )
-
 
 def vista_previa(df):
     if st.button('Vista Previa'):
