@@ -135,7 +135,6 @@ def to_excel(df, comentario):
 def descargar_excel(df, nombre_archivo):
     st.download_button(
         label="Descargar Excel",
-        data=to_excel(df),
         file_name=nombre_archivo,
         mime="application/vnd.ms-excel"
     )
