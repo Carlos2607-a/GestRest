@@ -53,7 +53,6 @@ elif subcategoria_seleccionada == 'Productos Barra':
         mostrar_carrito(st.session_state['pedidos'])
 
     nombre_archivo = f"Pedido_{restaurante_seleccionado}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
-    comentario = st.text_area('Agrega tus comentarios aquí', height=200)
     descargar_excel(st.session_state['pedidos'], nombre_archivo, comentario)    
 
 elif subcategoria_seleccionada == 'Productos Limpieza':
