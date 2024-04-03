@@ -121,12 +121,9 @@ def to_excel(df):
         # Escribe el enunciado 'Fecha:' con el formato de título
         worksheet.write('D1', 'Fecha:', title_format)
 
-        # Define un formato para el texto centrado
-        centered_format = workbook.add_format({'align': 'center', 'font_size': 14})
-
-        # Escribe la fecha en una celda con el texto centrado
+        # Escribe la fecha actual con el formato de fecha
         fecha_actual = datetime.now().strftime("%d/%m/%Y")
-        worksheet.write('D2', fecha_actual, centered_format)
+        worksheet.write('D2', fecha_actual, date_format)
 
     processed_data = output.getvalue()
     return processed_data
