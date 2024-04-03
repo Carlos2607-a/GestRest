@@ -19,6 +19,7 @@ from yaml.loader import SafeLoader
 
 
 
+
 st.set_page_config(
     page_title='Gestión de Restaurantes',
     layout='wide',
@@ -43,6 +44,10 @@ if st.session_state["authentication_status"]:
     authenticator.logout()
     st.write(f'Welcome *{st.session_state["name"]}*')
     st.title('Some content')
+    with st.expander("Contenido Permitido", expanded=True):
+        st.page_link(
+            "/workspaces/GestRest/Pedidos.py"
+        )
 
 elif st.session_state["authentication_status"] is False:
     st.error('Username/password is incorrect')
