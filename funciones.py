@@ -131,12 +131,16 @@ def to_excel(df):
     processed_data = output.getvalue()
     return processed_data
 
-
 def descargar_excel(df, restaurante_seleccionado):
-    # Save the Excel file to the specified path
-    path = 'Pedidos Realizados'
+    # Define the directory where you want to save the file
+    path = '/workspaces/GestRest/Pedidos Realizados'
+    
+    # Create the directory if it does not exist
+    os.makedirs(path, exist_ok=True)
+
+    # Continue with your existing code...
     nombre_archivo = f"Pedido_{restaurante_seleccionado}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
-    file_path = os.path.join(path, nombre_archivo)  # Use the variable 'path' here
+    file_path = os.path.join(path, nombre_archivo)
     with pd.ExcelWriter(file_path, engine='xlsxwriter') as writer:
         df.to_excel(writer, index=False, startrow=2)
     print(f"Excel file has been saved to {file_path}")
@@ -148,8 +152,6 @@ def descargar_excel(df, restaurante_seleccionado):
         file_name=nombre_archivo,
         mime="application/vnd.ms-excel"
     )
-
-
 
 def vista_previa(df):
     if st.button('Vista Previa'):
