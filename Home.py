@@ -47,9 +47,11 @@ if st.session_state["authentication_status"]:
     with st.expander("Contenido Permitido", expanded=True):
         st.page_link(
             "pages/Pedidos.py"
+            disabled=False
         )
         st.page_link(
             "pages/Soporte Tecnico.py"
+            disabled=False
         )
         st.page_link(
             "pages/Administración.py"
