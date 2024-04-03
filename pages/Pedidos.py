@@ -82,9 +82,8 @@ elif subcategoria_seleccionada == 'Productos Barra':
 
 elif subcategoria_seleccionada == 'Productos Limpieza':
     st.write('Productos Limpieza')
-
     if 'pedidos' not in st.session_state:
-        st.session_state['pedidos_limpieza'] = pd.DataFrame(columns=['Producto'])
+        st.session_state['pedidos'] = pd.DataFrame(columns=['Producto'])
 
     # Selección de restaurante
     restaurante_seleccionado = st.selectbox('Selecciona el Restaurante', [''] + list(restaurantes.keys()))
@@ -99,13 +98,14 @@ elif subcategoria_seleccionada == 'Productos Limpieza':
         seleccionar_productos(categoria, productos)
 
     # Vista previa del DataFrame
-    vista_previa(st.session_state['pedidos_limpieza'])
+    vista_previa(st.session_state['pedidos'])
 
     if 'pedidos' in st.session_state:
-        mostrar_carrito(st.session_state['pedidos_limpieza'])
+        mostrar_carrito(st.session_state['pedidos'])
 
     nombre_archivo = f"Pedido_{restaurante_seleccionado}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
-    descargar_excel(st.session_state['pedidos_limpieza'], nombre_archivo)
+    descargar_excel(st.session_state['pedidos'], nombre_archivo)
+    
 
 if st.button("Volver al Menú Principal"):
     st.page_link("Home.py", disabled=False)
