@@ -96,7 +96,7 @@ def to_excel(df):
         worksheet.write('A1', 'Solicitud de Productos', title_format)
 
         # Aplica el formato de título a las celdas B1 a D1
-        for col in range(1, 5):  # Las columnas en xlsxwriter comienzan en 0, por lo que 1 es la columna B y 4 es la columna E
+        for col in range(1, 4):  # Las columnas en xlsxwriter comienzan en 0, por lo que 1 es la columna B y 4 es la columna E
             worksheet.write(0, col, '', title_format)  # La fila 0 es la fila 1 en Excel
 
         # Crea un formato con bordes y texto centrado
@@ -113,11 +113,17 @@ def to_excel(df):
         worksheet.set_column('A:A', 60) 
         worksheet.set_column('B:B', 20)
         worksheet.set_column('C:C', 40)
+        worksheet.set_column('D:D', 40)
 
-        # Agrega la fecha actual a una celda
+        # Define un formato para la fecha con fondo blanco y texto negro
+        date_format = workbook.add_format({'font_size': 14, 'bg_color': 'white', 'font_color': 'black'})
+
+        # Escribe el enunciado 'Fecha:' con el formato de título
+        worksheet.write('D1', 'Fecha:', title_format)
+
+        # Escribe la fecha actual con el formato de fecha
         fecha_actual = datetime.now().strftime("%d/%m/%Y")
-        worksheet.write('D1', 'Fecha:', bordered_format)
-        worksheet.write('D2', fecha_actual, bordered_format)
+        worksheet.write('D2', fecha_actual, date_format)
 
     processed_data = output.getvalue()
     return processed_data
