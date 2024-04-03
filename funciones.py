@@ -122,7 +122,7 @@ def to_excel(df):
         worksheet.write('D1', 'Fecha:', title_format)
 
         # Define un formato para el texto centrado
-        centered_format = workbook.add_format({'align': 'center'})
+        centered_format = workbook.add_format({'align': 'center', 'font_size': 20})
 
         # Escribe la fecha en una celda con el texto centrado
         fecha_actual = datetime.now().strftime("%d/%m/%Y")
