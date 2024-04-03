@@ -53,13 +53,13 @@ elif subcategoria_seleccionada == 'Productos Barra':
         mostrar_carrito(st.session_state['pedidos'])
 
     nombre_archivo = f"Pedido_{restaurante_seleccionado}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
-    descargar_excel(st.session_state['pedidos'], nombre_archivo)
+    comentario = st.text_area('Agrega tus comentarios aquí', height=200)
+    descargar_excel(st.session_state['pedidos'], nombre_archivo, comentario)    
 
 elif subcategoria_seleccionada == 'Productos Limpieza':
     st.write('Productos Limpieza')
 
-# Añade una entrada de texto para que el cliente pueda añadir comentarios
-comentario = st.text_area('Agrega tus comentarios aquí', height=200)
+
 
 # Añade el comentario al DataFrame 'pedidos'
 if 'pedidos' in st.session_state:
