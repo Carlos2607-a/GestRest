@@ -121,7 +121,7 @@ def to_excel(df):
 
 def descargar_excel(df, nombre_archivo):
     st.download_button(
-        label="Enviar Pedido",
+        label="Descargar Excel",
         data=to_excel(df),
         file_name=nombre_archivo,
         mime="application/vnd.ms-excel"
