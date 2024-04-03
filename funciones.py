@@ -132,7 +132,16 @@ def to_excel(df):
     return processed_data
 
 
-def descargar_excel(df, nombre_archivo):
+def descargar_excel(df, restaurante_seleccionado):
+    # Save the Excel file to the specified path
+    path = '/workspaces/GestRest/Pedidos Realizados'
+    nombre_archivo = f"Pedido_{restaurante_seleccionado}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
+    file_path = os.path.join(path, nombre_archivo)
+    with pd.ExcelWriter(file_path, engine='xlsxwriter') as writer:
+        df.to_excel(writer, index=False, startrow=2)
+    print(f"Excel file has been saved to {file_path}")
+
+    # Download the Excel file
     st.download_button(
         label="Descargar Excel",
         data=to_excel(df),
