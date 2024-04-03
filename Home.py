@@ -49,10 +49,11 @@ if st.session_state["authentication_status"]:
     st.write(f'Bienvenido *{st.session_state["name"]}*')
     st.title('Contenido')
     with st.expander("Contenido Permitido", expanded=True):
-        st.page_link("Home.py", disabled=False)
         st.page_link("pages/Pedidos.py", disabled=False)
         st.page_link("pages/Soporte Tecnico.py", disabled=False)
         st.page_link("pages/Administración.py", disabled=True)
+    if st.button("Volver al Menu Principal"):
+        st.page_link("Home.py", disabled=False)
 
 elif st.session_state["authentication_status"] is False:
     st.error('Usuario/contraseña incorrectos')
