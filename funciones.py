@@ -80,57 +80,44 @@ def seleccionar_productos(categoria, productos):
 
 
 
-def to_excel(df, template_path, output_path, nombre_del_restaurante):
-    # Escribe el DataFrame a un archivo Excel temporal
-    df.to_excel('temp.xlsx', index=False)
-
-    # Lee la plantilla y el archivo Excel temporal
-    template_df = pd.read_excel(template_path)
-    temp_df = pd.read_excel('temp.xlsx')
-
-    # Comprueba si las columnas son iguales
-    st.text("Las columnas son iguales: " + str(temp_df.columns.equals(template_df.columns)))
-
-    # Encuentra las columnas en el DataFrame que no están en la plantilla
-    diff_df = set(temp_df.columns) - set(template_df.columns)
-    st.text("Columnas en el DataFrame que no están en la plantilla: " + str(diff_df))
-
-    # Encuentra las columnas en la plantilla que no están en el DataFrame
-    diff_template = set(template_df.columns) - set(temp_df.columns)
-    st.text("Columnas en la plantilla que no están en el DataFrame: " + str(diff_template))
-
-    # Rellena el DataFrame de la plantilla con los datos del archivo Excel temporal
-    for col in temp_df.columns:
-        if col in template_df.columns:
-            template_df[col] = temp_df[col]
-
-    # Escribe el DataFrame de la plantilla a tu archivo de salida
-    template_df.to_excel(output_path, index=False)
-    # Escribe el DataFrame en un nuevo archivo de Excel
-    with pd.ExcelWriter(output_path, engine='xlsxwriter') as writer:
-        template_df.to_excel(writer, index=False)  # Deja una fila en blanco en la parte superior para la fecha y el nombre del restaurante
-
+def to_excel(df):
+    output = BytesIO()
+    with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
+        df.to_excel(writer, index=False, startrow=1)  # Deja una fila en blanco en la parte superior para la fecha
+        
         # Obtén la hoja de trabajo de xlsxwriter
         workbook  = writer.book
         worksheet = writer.sheets['Sheet1']
-
+        
         # Crea un formato con bordes y texto centrado
         bordered_format = workbook.add_format({'border':1, 'align':'center'})
+        
+        # Aplica el formato a las celdas con información
+        for row_num, row_data in enumerate(df.values):
+            for col_num, cell_data in enumerate(row_data):
+                # Solo aplicamos el formato si la celda contiene datos
+                if cell_data:
+                    worksheet.write(row_num+2, col_num, cell_data, bordered_format)
+        
+        # Establece el ancho de las columnas
+        worksheet.set_column('A:A', 40) 
+        worksheet.set_column('B:B', 20)  #
+        worksheet.set_column('C:C', 40)  
 
-        # Agrega la fecha actual y el nombre del restaurante a las celdas
+        # Agrega la fecha actual a una celda
         fecha_actual = datetime.now().strftime("%d/%m/%Y")
-        worksheet.write('D3', fecha_actual, bordered_format)
+        worksheet.write('A1', 'Fecha:', bordered_format)
+        worksheet.write('B1', fecha_actual, bordered_format)
 
-    # Devuelve los datos del archivo de Excel como bytes
-    with open(output_path, 'rb') as f:
-        return f.read()
+    processed_data = output.getvalue()
+    return processed_data
 
-def descargar_excel(df, nombre_archivo, nombre_del_restaurante):
+def descargar_excel(df, nombre_archivo):
     st.download_button(
-        label="Descargar Excel",
-        data=to_excel(df, "plantilla/plantilla.xlsx", nombre_archivo, nombre_del_restaurante),
+        label="Enviar Pedido",
+        data=to_excel(df),
         file_name=nombre_archivo,
-        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        mime="application/vnd.ms-excel"
     )
 
 
