@@ -88,6 +88,9 @@ def to_excel(df, template_path, output_path, nombre_del_restaurante):
     template_df = pd.read_excel(template_path)
     temp_df = pd.read_excel('temp.xlsx')
 
+    # Comprueba si las columnas son iguales
+    print("Las columnas son iguales:", temp_df.columns.equals(template_df.columns))
+
     # Rellena el DataFrame de la plantilla con los datos del archivo Excel temporal
     for col in temp_df.columns:
         if col in template_df.columns:
@@ -113,6 +116,7 @@ def to_excel(df, template_path, output_path, nombre_del_restaurante):
     # Devuelve los datos del archivo de Excel como bytes
     with open(output_path, 'rb') as f:
         return f.read()
+
 
 def descargar_excel(df, nombre_archivo, nombre_del_restaurante):
     st.download_button(
