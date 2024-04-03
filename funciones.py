@@ -133,7 +133,7 @@ def to_excel(df):
 
 def descargar_excel(df, restaurante_seleccionado):
     # Define the directory where you want to save the file
-    path = '/workspaces/GestRest/Pedidos Realizados'
+    path = 'Pedidos Realizados'
     
     # Create the directory if it does not exist
     os.makedirs(path, exist_ok=True)
