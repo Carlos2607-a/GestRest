@@ -80,7 +80,7 @@ def seleccionar_productos(categoria, productos):
 
 
 
-def to_excel(df, comentario):
+def to_excel(df):
     output = BytesIO()
     with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
         df.to_excel(writer, index=False, startrow=2)  # Deja dos filas en blanco en la parte superior para el título y la fecha
@@ -90,10 +90,10 @@ def to_excel(df, comentario):
         worksheet = writer.sheets['Sheet1']
 
         # Crea un formato para el título
-        title_format = workbook.add_format({'font_size': 26, 'bg_color': 'black', 'font_color': 'white', 'align': 'center'})
+        title_format = workbook.add_format({'font_size': 26, 'bg_color': 'black', 'font_color': 'white'})
 
         # Escribe el título
-        worksheet.merge_range('A1:C1', 'Solicitud Productos', title_format)
+        worksheet.write('A1:C!', 'Solicitud de Productos', title_format)
 
         # Aplica el formato de título a las celdas B1 a D1
         for col in range(1, 4):  # Las columnas en xlsxwriter comienzan en 0, por lo que 1 es la columna B y 4 es la columna E
@@ -116,7 +116,7 @@ def to_excel(df, comentario):
         worksheet.set_column('D:D', 40)
 
         # Define un formato para la fecha con fondo blanco y texto negro
-        date_format = workbook.add_format({'font_size': 14, 'bg_color': 'white', 'font_color': 'black', 'align': 'center'})
+        date_format = workbook.add_format({'font_size': 14, 'bg_color': 'white', 'font_color': 'black'})
 
         # Escribe el enunciado 'Fecha:' con el formato de título
         worksheet.write('D1', 'Fecha:', title_format)
@@ -125,16 +125,14 @@ def to_excel(df, comentario):
         fecha_actual = datetime.now().strftime("%d/%m/%Y")
         worksheet.write('D2', fecha_actual, date_format)
 
-        # Escribe el comentario en la celda A5
-        worksheet.write('A5', 'Comentarios:', title_format)
-        worksheet.write('A6', comentario)
-
     processed_data = output.getvalue()
     return processed_data
+
 
 def descargar_excel(df, nombre_archivo):
     st.download_button(
         label="Descargar Excel",
+        data=to_excel(df),
         file_name=nombre_archivo,
         mime="application/vnd.ms-excel"
     )
