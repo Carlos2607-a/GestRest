@@ -28,6 +28,31 @@ subcategoria_seleccionada = st.sidebar.selectbox('Selecciona una subcategoría',
 # Muestra el contenido correspondiente a la subcategoría seleccionada
 if subcategoria_seleccionada == 'Productos Cocina':
     st.write('Productos Cocina')
+    if 'pedidos' not in st.session_state:
+        st.session_state['pedidos'] = pd.DataFrame(columns=['Producto'])
+
+    # Selección de restaurante
+    restaurante_seleccionado = st.selectbox('Selecciona el Restaurante', [''] + list(restaurantes.keys()))
+
+    if restaurante_seleccionado:
+        productos = restaurantes[restaurante_seleccionado]
+
+        # Selección de categoría
+        categoria = st.selectbox('Selecciona una categoría', list(productos.keys()))
+
+        # Selección de productos
+        seleccionar_productos(categoria, productos)
+
+    # Vista previa del DataFrame
+    vista_previa(st.session_state['pedidos'])
+
+    if 'pedidos' in st.session_state:
+        mostrar_carrito(st.session_state['pedidos'])
+
+    nombre_archivo = f"Pedido_{restaurante_seleccionado}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
+    descargar_excel(st.session_state['pedidos'], nombre_archivo)
+
+    
 elif subcategoria_seleccionada == 'Productos Barra':
     # Inicializa st.session_state['pedidos'] si no existe
     st.write('Productos de Barra')
