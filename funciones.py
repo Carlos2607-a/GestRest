@@ -91,6 +91,14 @@ def to_excel(df, template_path, output_path, nombre_del_restaurante):
     # Comprueba si las columnas son iguales
     st.text("Las columnas son iguales: " + str(temp_df.columns.equals(template_df.columns)))
 
+    # Encuentra las columnas en el DataFrame que no están en la plantilla
+    diff_df = set(temp_df.columns) - set(template_df.columns)
+    st.text("Columnas en el DataFrame que no están en la plantilla: " + str(diff_df))
+
+    # Encuentra las columnas en la plantilla que no están en el DataFrame
+    diff_template = set(template_df.columns) - set(temp_df.columns)
+    st.text("Columnas en la plantilla que no están en el DataFrame: " + str(diff_template))
+
     # Rellena el DataFrame de la plantilla con los datos del archivo Excel temporal
     for col in temp_df.columns:
         if col in template_df.columns:
@@ -116,8 +124,6 @@ def to_excel(df, template_path, output_path, nombre_del_restaurante):
     # Devuelve los datos del archivo de Excel como bytes
     with open(output_path, 'rb') as f:
         return f.read()
-
-
 
 def descargar_excel(df, nombre_archivo, nombre_del_restaurante):
     st.download_button(
