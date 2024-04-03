@@ -57,6 +57,5 @@ elif subcategoria_seleccionada == 'Productos Barra':
 elif subcategoria_seleccionada == 'Productos Limpieza':
     st.write('Productos Limpieza')
 
-# Agregar un botón para volver al menú principal
 if st.button("Volver al Menú Principal"):
-    st.experimental_rerun() 
+    st.page_link("Home.py", disabled=False)
