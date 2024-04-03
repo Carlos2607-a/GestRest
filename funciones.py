@@ -106,7 +106,7 @@ def to_excel(df):
                     worksheet.write(row_num+3, col_num, cell_data, bordered_format)
 
         # Establece el ancho de las columnas
-        worksheet.set_column('A:A', 40) 
+        worksheet.set_column('A:A', 60) 
         worksheet.set_column('B:B', 20)
         worksheet.set_column('C:C', 40)
 
