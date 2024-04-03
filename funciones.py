@@ -93,7 +93,7 @@ def to_excel(df):
         title_format = workbook.add_format({'font_size': 26, 'bg_color': 'black', 'font_color': 'white'})
 
         # Escribe el título
-        worksheet.write('A1', 'Solicitud de Productos', title_format)
+        worksheet.write('A1:C1', 'Solicitud de Productos', title_format)
 
         # Aplica el formato de título a las celdas B1 a D1
         for col in range(1, 4):  # Las columnas en xlsxwriter comienzan en 0, por lo que 1 es la columna B y 4 es la columna E
