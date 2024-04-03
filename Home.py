@@ -58,18 +58,6 @@ elif st.session_state["authentication_status"] is False:
 elif st.session_state["authentication_status"] is None:
     st.warning('Por favor, ingresa tu usuario y contraseña')
 
-# Función para manejar el evento del botón de restablecimiento de contraseña
-def handle_reset_password():
-    try:
-        if authenticator.reset_password(st.session_state["username"]):
-            st.success('Contraseña modificada exitosamente')
-    except Exception as e:
-        st.error(e)
-
-# Crear un botón para restablecer la contraseña
-if st.button("Restablecer Contraseña"):
-    handle_reset_password()
-
 # Guardar las credenciales actualizadas en el archivo YAML
 with open('credenciales.yaml', 'w') as file:
     yaml.dump(config, file, default_flow_style=False)
