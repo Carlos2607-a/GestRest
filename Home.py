@@ -46,7 +46,7 @@ if st.session_state["authentication_status"]:
     st.title('Some content')
     with st.expander("Contenido Permitido", expanded=True):
         st.page_link(
-            "/workspaces/GestRest/Features/Pedidos.py"
+            "Features/Pedidos.py"
         )
 
 elif st.session_state["authentication_status"] is False:
