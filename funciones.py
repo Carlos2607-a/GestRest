@@ -83,34 +83,41 @@ def seleccionar_productos(categoria, productos):
 def to_excel(df):
     output = BytesIO()
     with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
-        df.to_excel(writer, index=False, startrow=1)  # Deja una fila en blanco en la parte superior para la fecha
-        
+        df.to_excel(writer, index=False, startrow=2)  # Deja dos filas en blanco en la parte superior para el título y la fecha
+
         # Obtén la hoja de trabajo de xlsxwriter
         workbook  = writer.book
         worksheet = writer.sheets['Sheet1']
-        
+
+        # Crea un formato para el título
+        title_format = workbook.add_format({'font_size': 26, 'bg_color': 'black', 'font_color': 'white'})
+
+        # Escribe el título
+        worksheet.write('A1', 'Mi Título', title_format)
+
         # Crea un formato con bordes y texto centrado
         bordered_format = workbook.add_format({'border':1, 'align':'center'})
-        
+
         # Aplica el formato a las celdas con información
         for row_num, row_data in enumerate(df.values):
             for col_num, cell_data in enumerate(row_data):
                 # Solo aplicamos el formato si la celda contiene datos
                 if cell_data:
-                    worksheet.write(row_num+2, col_num, cell_data, bordered_format)
-        
+                    worksheet.write(row_num+3, col_num, cell_data, bordered_format)
+
         # Establece el ancho de las columnas
         worksheet.set_column('A:A', 40) 
-        worksheet.set_column('B:B', 20)  #
-        worksheet.set_column('C:C', 40)  
+        worksheet.set_column('B:B', 20)
+        worksheet.set_column('C:C', 40)
 
         # Agrega la fecha actual a una celda
         fecha_actual = datetime.now().strftime("%d/%m/%Y")
-        worksheet.write('A1', 'Fecha:', bordered_format)
-        worksheet.write('B1', fecha_actual, bordered_format)
+        worksheet.write('A2', 'Fecha:', bordered_format)
+        worksheet.write('B2', fecha_actual, bordered_format)
 
     processed_data = output.getvalue()
     return processed_data
+
 
 def descargar_excel(df, nombre_archivo):
     st.download_button(
