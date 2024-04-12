@@ -82,7 +82,7 @@ def seleccionar_productos(categoria, productos):
 def seleccionar_productos_cocina(categoria, productos):
     st.subheader(categoria)
     productos_procesados = set()
-    if categoria in ['Aceites y Similares', 'Lacteos y Charcuteria', 'Frutas', 'Verduras y Similares']:
+    if categoria in ['Congelados','Carnes','Especias','Verduras y Similares', 'Frutas','Salsas','Cereales y Derivados','Reposteria','Frutos Secos y Similares','Lacteos y Charcuteria', 'Panes y Similares','Aceites y Similares']:
         # Crea dos columnas
         col1, col2 = st.columns(2)
         for i, item in enumerate(productos[categoria]):
@@ -110,7 +110,7 @@ def seleccionar_productos_cocina(categoria, productos):
                     añadir_producto(item, cantidad, categoria, unidad)
                 productos_procesados.add(item)
 
-                
+
 def to_excel(df):
     output = BytesIO()
     with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
