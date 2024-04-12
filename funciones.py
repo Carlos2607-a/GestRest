@@ -79,7 +79,38 @@ def seleccionar_productos(categoria, productos):
                 productos_procesados.add(item)
 
 
+def seleccionar_productos_cocina(categoria, productos):
+    st.subheader(categoria)
+    productos_procesados = set()
+    if categoria in ['Aceites y Similares', 'Lacteos y Charcuteria', 'Frutas', 'Verduras y Similares']:
+        # Crea dos columnas
+        col1, col2 = st.columns(2)
+        for i, item in enumerate(productos[categoria]):
+            if item not in productos_procesados:
+                # Asigna los widgets a las columnas
+                if i % 2 == 0:
+                    col = col1
+                else:
+                    col = col2
+                # Verifica si el widget de entrada ya está en el estado de la sesión
+                key = f"{categoria}_{item}"
+                if key not in st.session_state:
+                    # Si no está, inicializa el widget de entrada en el estado de la sesión
+                    st.session_state[key] = 0
 
+                # Crea el widget de entrada usando el valor en el estado de la sesión
+                cantidad = col.number_input(f'{item}', min_value=0, step=1, value=st.session_state[key], key=key)
+
+                # Actualiza el valor en el estado de la sesión cada vez que el widget de entrada cambia
+                if cantidad != st.session_state[key]:
+                    st.session_state[key] = cantidad
+
+                if cantidad > 0:
+                    unidad = 'Unidades'
+                    añadir_producto(item, cantidad, categoria, unidad)
+                productos_procesados.add(item)
+
+                
 def to_excel(df):
     output = BytesIO()
     with pd.ExcelWriter(output, engine='xlsxwriter') as writer:

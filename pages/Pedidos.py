@@ -9,7 +9,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email import encoders
 import os
-from funciones import añadir_producto, to_excel, descargar_excel, seleccionar_productos, vista_previa, mostrar_carrito
+from funciones import añadir_producto, to_excel, descargar_excel, seleccionar_productos, vista_previa, mostrar_carrito, seleccionar_productos_cocina
 from productos import restaurantes, restaurantes_cocina
 
 
@@ -43,7 +43,7 @@ if subcategoria_seleccionada == 'Productos Cocina':
         categoria = st.selectbox('Selecciona una categoría', list(productos.keys()))
 
         # Selección de productos
-        seleccionar_productos(categoria, productos)
+        seleccionar_productos_cocina(categoria, productos)
 
         # Vista previa del DataFrame
         vista_previa(st.session_state['pedidos'])
