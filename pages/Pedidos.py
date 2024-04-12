@@ -10,7 +10,7 @@ from email.mime.base import MIMEBase
 from email import encoders
 import os
 from funciones import añadir_producto, to_excel, descargar_excel, seleccionar_productos, vista_previa, mostrar_carrito
-from productos import restaurantes
+from productos import restaurantes, restaurantes_cocina
 
 
 st.set_page_config(
@@ -34,10 +34,10 @@ if subcategoria_seleccionada == 'Productos Cocina':
         st.session_state['pedidos'] = pd.DataFrame(columns=['Producto'])
 
     # Selección de restaurante
-    restaurante_seleccionado = st.selectbox('Selecciona el Restaurante', [''] + list(restaurantes.keys()))
+    restaurante_seleccionado = st.selectbox('Selecciona el Restaurante', [''] + list(restaurantes_cocina.keys()))
 
     if restaurante_seleccionado:
-        productos = restaurantes[restaurante_seleccionado]
+        productos = restaurantes_cocina[restaurante_seleccionado]
 
         # Selección de categoría
         categoria = st.selectbox('Selecciona una categoría', list(productos.keys()))

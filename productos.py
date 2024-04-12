@@ -82,3 +82,50 @@ restaurantes = {
         'Licores Cocteleria' : ['Ron Añejo Bucanero', 'Triple Seco', 'Cachaça', 'Tequila Olmeca Blanco', 'Vodka Stolichnaya', 'Gin Gordon´s', 'Whisky J&B'],
         
     }}
+
+restaurantes_cocina = {
+    'Restaurante Symbad': {
+        'Congelados' : ['Gambas Peladas','Gambas 18-24','Pulpo','Langostinos Tigre','Caravineros','Gambas Blancas', 'Gambas Rojas', 'Cocochas', 'Vieiras', 'Calamar', 'Lenguado', 'Salmon', 'Bacalao', 'Corvina', 'Rosada','Puntillitas','Boquerones', 'Almejas', 'Mejillones', 'Atun', 'Rodavallo'],
+        'Carnes' : ['Solomillo Cerdo', 'Solomillo Ternera', 'Entrecor Ternera', 'Chuletas de Cordero', 'Pechuga Pollo', 'Hamburguesa'],
+        'Especias': ['Sal Fina','Sal Gruesa','Sal Himalaya','Sal Maldon', 'Sal Ahumada','Comino','Jengibre Molido','Nueces Peladas', 'Chile Deshidratado', 'Polvo de Pescado','Polvo de Pollo','Polvo de Verduras', 'Polvo de Aromas', 'Pimenton Oro', 'Pimenton Dulce','Colorante Amarillo','Cebolla Molida', 'Ajo Molido','Pimienta Grano Negro','Pimienta Molida Blanca', 'Orégano', 'Cayena Picante', 'Sesamo Blanco','Sesamo Negro' ],
+        'Verduras y Similares': ['Tomate', 'Cebolla', 'Tomate Cherry', 'Cebolla Morada', 'Lechuga','Papas', 'Boniato', 'Pepino', 'Calabacin', 'Perejil', 'Cilantro'],
+        'Frutas' : ['Manzana', 'Melon', 'Pera', 'Sandia', 'Mora', 'Papaya', 'Frambuesa', 'Mango', 'Naranja', 'Mandarina', 'Limon', 'Lima', 'Arandanos', 'Melocoton', 'Piña'],
+        'Salsas': ['Tartara', ' Bearnesa', ' Berris', 'Mayonesa', 'Mayonesa Japonesa', 'Tabasco', 'Sweet Chilli', 'Mojo', 'Soja Sin Gluten', 'Mostaza', 'Ketchup'],
+        'Cereales y Derivados' : ['Arroz Numen', 'Arroz largo Basmati ', 'Pasta Penne', 'Pasta Tagliatelle', 'Spaguetti'],
+        'Reposteria' : ['Azucar Glass', 'Azucar Blanca','Azucar Morena','Nata', 'Miel Flores', 'Miel de caña', 'Cobertura Chocoloate Blanco', 'Cobertura Chocoloate Negro', 'Esencia Vainilla', 'Canela', 'Chocolate Polvo', 'Gelatina Sin Sabor'],
+        'Frutos Secos y Similares' : ['Nueces', 'Pasas', 'Piñones', 'Almendras', 'Almendras'],
+        'Lacteos y Charcuteria' : ['Queso Mozarella', 'Queso Feta', 'Queso Chedar Lonchas','Mantequilla', 'Jamon York', 'Tocino', 'Huevos'],
+        'Panes y Similares' : ['Hogaza', 'Centeno', 'Cereales','Regañá','Grisini'],
+        'Aceites y Similares' : ['Aceite Girasol 10L', 'Aceite Oliva 5L', 'Aceite Oliva 1L', 'Vinagre Balsamico'],
+        
+    },
+    'Restaurante Andy´S': {
+        'Congelados' : ['Gambas Peladas','Gambas 18-24','Pulpo','Langostinos Tigre','Caravineros','Gambas Blancas', 'Gambas Rojas', 'Cocochas', 'Vieiras', 'Calamar', 'Lenguado', 'Salmon', 'Bacalao', 'Corvina', 'Rosada','Puntillitas','Boquerones', 'Almejas', 'Mejillones', 'Atun', 'Rodavallo'],
+        'Carnes' : ['Solomillo Cerdo', 'Solomillo Ternera', 'Entrecor Ternera', 'Chuletas de Cordero', 'Pechuga Pollo', 'Hamburguesa'],
+        'Especias': ['Sal Fina','Sal Gruesa','Sal Himalaya','Sal Maldon', 'Sal Ahumada','Comino','Jengibre Molido','Nueces Peladas', 'Chile Deshidratado', 'Polvo de Pescado','Polvo de Pollo','Polvo de Verduras', 'Polvo de Aromas', 'Pimenton Oro', 'Pimenton Dulce','Colorante Amarillo','Cebolla Molida', 'Ajo Molido','Pimienta Grano Negro','Pimienta Molida Blanca', 'Orégano', 'Cayena Picante', 'Sesamo Blanco','Sesamo Negro' ],
+        'Verduras y Similares': ['Tomate', 'Cebolla', 'Tomate Cherry', 'Cebolla Morada', 'Lechuga','Papas', 'Boniato', 'Pepino', 'Calabacin', 'Perejil', 'Cilantro'],
+        'Frutas' : ['Manzana', 'Melon', 'Pera', 'Sandia', 'Mora', 'Papaya', 'Frambuesa', 'Mango', 'Naranja', 'Mandarina', 'Limon', 'Lima', 'Arandanos', 'Melocoton', 'Piña'],
+        'Salsas': ['Tartara', ' Bearnesa', ' Berris', 'Mayonesa', 'Mayonesa Japonesa', 'Tabasco', 'Sweet Chilli', 'Mojo', 'Soja Sin Gluten', 'Mostaza', 'Ketchup'],
+        'Cereales y Derivados' : ['Arroz Numen', 'Arroz largo Basmati ', 'Pasta Penne', 'Pasta Tagliatelle', 'Spaguetti'],
+        'Reposteria' : ['Azucar Glass', 'Azucar Blanca','Azucar Morena','Nata', 'Miel Flores', 'Miel de caña', 'Cobertura Chocoloate Blanco', 'Cobertura Chocoloate Negro', 'Esencia Vainilla', 'Canela', 'Chocolate Polvo', 'Gelatina Sin Sabor'],
+        'Frutos Secos y Similares' : ['Nueces', 'Pasas', 'Piñones', 'Almendras', 'Almendras'],
+        'Lacteos y Charcuteria' : ['Queso Mozarella', 'Queso Feta', 'Queso Chedar Lonchas','Mantequilla', 'Jamon York', 'Tocino', 'Huevos'],
+        'Panes y Similares' : ['Hogaza', 'Centeno', 'Cereales','Regañá','Grisini'],
+        'Aceites y Similares' : ['Aceite Girasol 10L', 'Aceite Oliva 5L', 'Aceite Oliva 1L', 'Vinagre Balsamico'],
+        
+    },
+    'Restaurante Luna Beach' :{
+        'Congelados' : ['Gambas Peladas','Gambas 18-24','Pulpo','Langostinos Tigre','Caravineros','Gambas Blancas', 'Gambas Rojas', 'Cocochas', 'Vieiras', 'Calamar', 'Lenguado', 'Salmon', 'Bacalao', 'Corvina', 'Rosada','Puntillitas','Boquerones', 'Almejas', 'Mejillones', 'Atun', 'Rodavallo'],
+        'Carnes' : ['Solomillo Cerdo', 'Solomillo Ternera', 'Entrecor Ternera', 'Chuletas de Cordero', 'Pechuga Pollo', 'Hamburguesa'],
+        'Especias': ['Sal Fina','Sal Gruesa','Sal Himalaya','Sal Maldon', 'Sal Ahumada','Comino','Jengibre Molido','Nueces Peladas', 'Chile Deshidratado', 'Polvo de Pescado','Polvo de Pollo','Polvo de Verduras', 'Polvo de Aromas', 'Pimenton Oro', 'Pimenton Dulce','Colorante Amarillo','Cebolla Molida', 'Ajo Molido','Pimienta Grano Negro','Pimienta Molida Blanca', 'Orégano', 'Cayena Picante', 'Sesamo Blanco','Sesamo Negro' ],
+        'Verduras y Similares': ['Tomate', 'Cebolla', 'Tomate Cherry', 'Cebolla Morada', 'Lechuga','Papas', 'Boniato', 'Pepino', 'Calabacin', 'Perejil', 'Cilantro'],
+        'Frutas' : ['Manzana', 'Melon', 'Pera', 'Sandia', 'Mora', 'Papaya', 'Frambuesa', 'Mango', 'Naranja', 'Mandarina', 'Limon', 'Lima', 'Arandanos', 'Melocoton', 'Piña'],
+        'Salsas': ['Tartara', ' Bearnesa', ' Berris', 'Mayonesa', 'Mayonesa Japonesa', 'Tabasco', 'Sweet Chilli', 'Mojo', 'Soja Sin Gluten', 'Mostaza', 'Ketchup'],
+        'Cereales y Derivados' : ['Arroz Numen', 'Arroz largo Basmati ', 'Pasta Penne', 'Pasta Tagliatelle', 'Spaguetti'],
+        'Reposteria' : ['Azucar Glass', 'Azucar Blanca','Azucar Morena','Nata', 'Miel Flores', 'Miel de caña', 'Cobertura Chocoloate Blanco', 'Cobertura Chocoloate Negro', 'Esencia Vainilla', 'Canela', 'Chocolate Polvo', 'Gelatina Sin Sabor'],
+        'Frutos Secos y Similares' : ['Nueces', 'Pasas', 'Piñones', 'Almendras', 'Almendras'],
+        'Lacteos y Charcuteria' : ['Queso Mozarella', 'Queso Feta', 'Queso Chedar Lonchas','Mantequilla', 'Jamon York', 'Tocino', 'Huevos'],
+        'Panes y Similares' : ['Hogaza', 'Centeno', 'Cereales','Regañá','Grisini'],
+        'Aceites y Similares' : ['Aceite Girasol 10L', 'Aceite Oliva 5L', 'Aceite Oliva 1L', 'Vinagre Balsamico'],
+        
+    }}
