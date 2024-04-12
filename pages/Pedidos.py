@@ -45,11 +45,11 @@ if subcategoria_seleccionada == 'Productos Cocina':
         # Selección de productos
         seleccionar_productos(categoria, productos)
 
-    # Vista previa del DataFrame
-    vista_previa(st.session_state['pedidos'])
+        # Vista previa del DataFrame
+        vista_previa(st.session_state['pedidos'])
 
-    if 'pedidos' in st.session_state:
-        mostrar_carrito(st.session_state['pedidos'])
+        if 'pedidos' in st.session_state:
+            mostrar_carrito(st.session_state['pedidos'])
 
     nombre_archivo = f"Pedido_{restaurante_seleccionado}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
     descargar_excel(st.session_state['pedidos'], nombre_archivo)

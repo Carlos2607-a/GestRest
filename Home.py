@@ -17,6 +17,7 @@ import streamlit_authenticator as stauth
 import yaml
 from yaml.loader import SafeLoader
 
+
 # Configurar la página
 st.set_page_config(
     page_title='Gestión de Restaurantes',
