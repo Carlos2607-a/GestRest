@@ -24,7 +24,7 @@ st.title('Solicitud de Productos')
 # Crea una lista de subcategorías para 'Pedidos'
 subcategorias = ['Productos Cocina', 'Productos Barra', 'Productos Limpieza']
 # Crea un widget selectbox en la barra lateral para seleccionar la subcategoría
-subcategoria_seleccionada = st.sidebar.selectbox('Selecciona una subcategoría', subcategorias)
+subcategoria_seleccionada = st.selectbox('Selecciona una subcategoría', subcategorias)
 # Muestra el contenido correspondiente a la subcategoría seleccionada
 if subcategoria_seleccionada == 'Productos Cocina':
 
