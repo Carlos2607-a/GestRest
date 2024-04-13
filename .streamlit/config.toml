@@ -9,6 +9,7 @@ textColor = "#DCDCDC"
 font = "sans-serif"
 
 [server]
+enableXsrfProtection = false
 headless = true
 enableCORS=false
 port = $PORT
