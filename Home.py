@@ -35,6 +35,7 @@ hide_st_style = """
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
+st.image("_bee8a658-870f-4505-8c4d-7910c5963320-removebg-preview.png", width=300)  # Ajusta el ancho según tus necesidades.
 # Título
 st.title('Welcome to GestRest')
 
