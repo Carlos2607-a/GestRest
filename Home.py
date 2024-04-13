@@ -17,10 +17,18 @@ import streamlit_authenticator as stauth
 import yaml
 from yaml.loader import SafeLoader
 
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
 
 # Configurar la página
 st.set_page_config(
-    page_title='Gestión de Restaurantes',
+    page_title='GestRest',
     layout='wide',
     page_icon='📊'
 )
