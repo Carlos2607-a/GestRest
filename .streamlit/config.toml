@@ -1,15 +1,2 @@
 [client]
 showSidebarNavigation = false
-
-[theme]
-primaryColor = "#E694FF"
-backgroundColor = "#00172B"
-secondaryBackgroundColor = "#0083B8"
-textColor = "#DCDCDC"
-font = "sans-serif"
-
-[server]
-enableXsrfProtection = false
-headless = true
-enableCORS=false
-port = $PORT
