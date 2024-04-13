@@ -17,6 +17,15 @@ import streamlit_authenticator as stauth
 import yaml
 from yaml.loader import SafeLoader
 
+
+
+# Configurar la página
+st.set_page_config(
+    page_title='GestRest',
+    layout='wide',
+    page_icon='📊'
+)
+
 hide_st_style = """
             <style>
             #MainMenu {visibility: hidden;}
@@ -25,13 +34,6 @@ hide_st_style = """
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
-
-# Configurar la página
-st.set_page_config(
-    page_title='GestRest',
-    layout='wide',
-    page_icon='📊'
-)
 
 # Título
 st.title('Bienvenido a GestRest')
