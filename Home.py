@@ -36,7 +36,7 @@ hide_st_style = """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
 # Título
-st.title('Bienvenido a GestRest')
+st.title('Welcome to GestRest')
 
 # Cargar las credenciales desde el archivo YAML
 with open('credenciales.yaml') as file:
