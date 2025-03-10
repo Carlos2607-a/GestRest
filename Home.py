@@ -14,8 +14,13 @@ import pathlib as Path
 import streamlit_authenticator as stauth
 import yaml
 from yaml.loader import SafeLoader
+import hashlib
 from funciones import añadir_producto, to_excel, descargar_excel, seleccionar_productos, vista_previa, mostrar_carrito
 from productos import restaurantes
+
+# Función para hacer el hash de la contraseña
+def hash_password(password):
+    return hashlib.sha256(password.encode('utf-8')).hexdigest()
 
 # Configurar la página
 st.set_page_config(
@@ -39,6 +44,12 @@ st.title('Welcome to GestRest')
 # Cargar credenciales desde el archivo YAML
 with open('credenciales.yaml') as file:
     config = yaml.load(file, Loader=SafeLoader)
+
+# Hashear las contraseñas antes de guardarlas
+for user, credentials in config['credentials'].items():
+    # Si la contraseña no está hasheada aún, aplicamos el hash
+    if not credentials['password'].startswith('sha256$'):
+        credentials['password'] = hash_password(credentials['password'])
 
 # Inicializar autenticador sin 'pre-authorized'
 authenticator = stauth.Authenticate(
