@@ -10,8 +10,8 @@ credentials:
       email: luna@gmail.com
       failed_login_attempts: 0 # Will be managed automatically
       logged_in: False # Will be managed automatically
-      name: Javier Luna
-      password: Luna654. # Will be hashed automatically
+      name: Gloria
+      password: Luna321. # Will be hashed automatically
     monse:
       email: andys@gmail.com
       failed_login_attempts: 0 # Will be managed automatically
