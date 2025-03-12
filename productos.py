@@ -66,10 +66,10 @@ restaurantes = {
             'Aperitivos' : ['Campari', 'Ricard', 'Aperol', 'Martini Rojo', 'Martini Bianco', 'Vermut Petroni Rojo', 'Vermut Petroni Blanco', 'Fernet Branca']
         },
         'Vinos' : {
-        'Blanco' : ['Verdejo Pez Volador', 'Verdejo Selección Viña Cimbrón','Chardonnay Aresán Organic','Sauvignon Blanc Viña Cimbrón', 'Albariño Señorio de Rubiós', 'Godello Abad Dom Bueno', '', 'Mas Picosa Blanco', 'Pragustus', 'Abadia Marcier', 'Patito Feo', 'Max Ferd Richter Zepellin', 'Equilibrio', 'La Mateo Blanco Barrica', 'Menade Ecologico', 'Menade Magnum', 'Marques de Riscal Rueda Limousin', 'Puech-Haut', 'Love By Leoube', 'Libero Velo de Flor', 'Gerard Boulay', 'Finca La Olma', 'Bon Jan Blanc'],
-        'Rosado' : ['Pasion Bio', 'Love By Leoube', 'Protos Rosado', 'Love Rose Magnum', 'Clavellina', 'Puech-Haut', 'Fradei', 'Abadia Mercier', 'Lerin'],
-        'Tinto' : ['Viña Vieja', 'Entrechuelos', 'Love By Leoube', 'Habla del Silencio', 'Vallehondo', 'Puech-Haut', 'Mas Picosa Bio', 'Hacienda Monasterio', 'Protos 27', 'Un Joben Ribera', 'Hacienda Monasterio Magnum', 'Flor de Pingus', 'Vega Sicilia Valbuena 5º año', 'Pago de Quintana', 'Roda I Reserva', 'La Mateo Vendimia', 'La Mateo Vendimia Magnum', 'Finca Besaya Joven', 'Peña El Gato', 'Pago El Espino', 'Tadeo', 'Valeriano', 'Almirez','Bon Jan Negre', 'Pasion de Bobal' ],
-        'Espumoso' : ['Pet Nat Natural', 'Pasion Gran Reserva', 'Laurent Perrier Blanc', 'Laurent Perrier Rose', 'Laurent Perrier Blanc de bkancs 750 ml', 'Pasion Cava BLanco', 'Pasion Cava Rose', 'Prosecco', 'Lume' ],
+        'Blanco' : ['Verdejo Pez Volador', 'Verdejo Selección Viña Cimbrón','Chardonnay Aresán Organic','Sauvignon Blanc Viña Cimbrón', 'Albariño Señorio de Rubiós', 'Godello Abad Dom Bueno', 'Chardonnay Chablis Domaine Camú', 'Báron de Ley 3 Viñas'],
+        'Rosado' : ['Campo Nuevo Blush', 'Avaniel Tempranillo (Rose)', 'Uvam Pinot Grigio Blush', 'Fleurs de Prairie', 'Fleurs de Prairie Magnun 1,5L'],
+        'Tinto' : ['Ciudad Secreta Vino de Ronda', 'Alta Pavina Pinot Noir','Rioja Vega Semicrianza', 'Avaniel Tempranillo (Red)', 'La Mateo', 'Haciendo Monasterio'],
+        'Espumoso' : ['Laurent Perrier Blanc', 'Laurent Perrier Rose', 'Laurent Perrier Blanc de bkancs 750 ml', 'Pasion Cava BLanco', 'Pasion Cava Rose', 'Prosecco', 'Lume' ],
         },
         'Cervezas' : ['Budweiser','Desperados','Sol','CruzCampo Botellin','CruzCampo Sin Gluten', 'El Aguila', 'Heineken Retornables', 'Heineken 0,0% Retornables', 'Mageners', 'Sol', 'Kopparberg MIX', 'Strongbow', 'Stella Artois'],
         'Barriles' : ['Barril CruzCampo', 'Barril Latino Limon', 'Barril Latino Casera', 'Barril Cerveza 0/0','Carbonico'],
