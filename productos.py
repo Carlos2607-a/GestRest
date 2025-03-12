@@ -11,7 +11,7 @@ restaurantes = {
         },
         'Vinos' : {
         'Blanco' : ['Verdejo Pez Volador', 'Verdejo Selección Viña Cimbrón','Chardonnay Aresán Organic','Sauvignon Blanc Viña Cimbrón', 'Albariño Señorio de Rubiós', 'Godello Abad Dom Bueno', 'Chardonnay Chablis Domaine Camú', 'Báron de Ley 3 Viñas'],
-        'Rosado' : ['Pasion Bio', 'Love By Leoube', 'Protos Rosado', 'Love Rose Magnum', 'Clavellina', 'Puech-Haut', 'Fradei', 'Abadia Mercier', 'Lerin'],
+        'Rosado' : ['Campo Nuevo Blush', 'Avaniel Tempranillo (Rose)', 'Uvam Pinot Grigio Blush', 'Fleurs de Prairie', 'Fleurs de Prairie Magnun 1,5L'],
         'Tinto' : ['Viña Vieja', 'Entrechuelos', 'Love By Leoube', 'Habla del Silencio', 'Vallehondo', 'Puech-Haut', 'Mas Picosa Bio', 'Hacienda Monasterio', 'Protos 27', 'Un Joben Ribera', 'Hacienda Monasterio Magnum', 'Flor de Pingus', 'Vega Sicilia Valbuena 5º año', 'Pago de Quintana', 'Roda I Reserva', 'La Mateo Vendimia', 'La Mateo Vendimia Magnum', 'Finca Besaya Joven', 'Peña El Gato', 'Pago El Espino', 'Tadeo', 'Valeriano', 'Almirez','Bon Jan Negre', 'Pasion de Bobal' ],
         'Espumoso' : ['Pet Nat Natural', 'Pasion Gran Reserva', 'Laurent Perrier Blanc', 'Laurent Perrier Rose', 'Laurent Perrier Blanc de bkancs 750 ml', 'Pasion Cava BLanco', 'Pasion Cava Rose', 'Prosecco', 'Lume' ],
         },
