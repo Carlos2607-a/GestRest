@@ -68,7 +68,7 @@ restaurantes = {
         'Vinos' : {
         'Blanco' : ['Verdejo Pez Volador', 'Verdejo Selección Viña Cimbrón','Chardonnay Aresán Organic','Sauvignon Blanc Viña Cimbrón', 'Albariño Señorio de Rubiós', 'Godello Abad Dom Bueno', 'Chardonnay Chablis Domaine Camú', 'Báron de Ley 3 Viñas'],
         'Rosado' : ['Campo Nuevo Blush', 'Avaniel Tempranillo (Rose)', 'Uvam Pinot Grigio Blush', 'Fleurs de Prairie', 'Fleurs de Prairie Magnun 1,5L'],
-        'Tinto' : ['Ciudad Secreta Vino de Ronda', 'Alta Pavina Pinot Noir','Rioja Vega Semicrianza', 'Avaniel Tempranillo (Red)', 'La Mateo', 'Hacienda Monasterio'],
+        'Tinto' : ['Ciudad Secreta Vino de Ronda', 'Alta Pavina Pinot Noir','Rioja Vega Semicrianza', 'Avaniel Tempranillo (Red)', 'La Mateo','Monteabellon Crianza', 'Hacienda Monasterio'],
         'Espumoso' : ['Laurent Perrier Blanc', 'Laurent Perrier Rose', 'Mistinguett Brut Cava', 'Mistinguett Brut Rose', 'Mistinguett Brut Cava Magnum', 'Mistinguett Brut Rose Magnum'],
         },
         'Cervezas' : ['Budweiser','Desperados','Sol','CruzCampo Botellin','CruzCampo Sin Gluten', 'El Aguila', 'Heineken Retornables', 'Heineken 0,0% Retornables', 'Mageners', 'Sol', 'Kopparberg MIX', 'Strongbow', 'Stella Artois'],
